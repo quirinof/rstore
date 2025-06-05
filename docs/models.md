@@ -24,16 +24,6 @@ class Supplier {
   string phone
 }
 
-class Address {
-  int id
-  string street
-  string number
-  string neighborhood
-  string city
-  string state
-  string postal_code
-}
-
 class Product {
   int id
   string name
