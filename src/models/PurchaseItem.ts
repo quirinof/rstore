@@ -3,5 +3,5 @@ export interface PurchaseItem {
   purchaseId: number;
   productId: number;
   quantity: number;
-  unitPrice: number;
+  unitCost: number;
 }
