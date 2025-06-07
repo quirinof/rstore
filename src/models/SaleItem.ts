@@ -3,5 +3,5 @@ export interface SaleItem {
   saleId: number;
   productId: number;
   quantity: number;
-  soldPrice: number;
+  unitPrice: number;
 }

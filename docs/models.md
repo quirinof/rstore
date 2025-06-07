@@ -47,7 +47,7 @@ class SaleItem {
   int sale_id
   int product_id
   int quantity
-  decimal sold_price
+  decimal unit_price
 }
 
 class Promissory {

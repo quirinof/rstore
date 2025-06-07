@@ -1,5 +1,4 @@
-// src/data/sales.ts
-import { Sale } from "../models/Sale";
+import { Sale } from "@/models/Sale";
 
 export const sales: Sale[] = [
   {
