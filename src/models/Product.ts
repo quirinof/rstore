@@ -4,7 +4,6 @@ export interface Product {
   stockQuantity: number;
   currentPrice: number;
   unitOfMeasure?: "kg" | "g" | "l" | "ml" | "unidade";
-  measurementValue?: number;
   category?: "Casa" | "Higiene" | "Outros";
   brand?: string;
 }
