@@ -1,23 +1,16 @@
-import { View, Text, StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
+import { useEffect } from "react";
 
 export default function Index() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Rstore</Text>
-    </View>
-  );
-}
+  const router = useRouter();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "black",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#fff",
-  },
-});
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      router.replace("/drawer/home");
+    }, 0);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return null;
+}
