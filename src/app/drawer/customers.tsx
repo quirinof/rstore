@@ -12,19 +12,15 @@ import { customers } from "@/data/customers";
 export default function CustomersPage() {
   const router = useRouter();
 
-  const handleAdd = () => {
-    router.push("/drawer/customers/new");
-  };
-
   const handleSelectCustomer = (id: number) => {
-    router.push(`/drawer/customers/${id}`);
+    router.push(`/customers/${id}`);
   };
 
   return (
     <View style={styles.container}>
       <Button
         title="+ Adicionar Cliente"
-        onPress={handleAdd}
+        onPress={() => alert("tela de adicionar cliente em construção...")}
         buttonStyle={styles.addButton}
       />
 
