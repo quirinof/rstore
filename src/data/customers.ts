@@ -44,4 +44,37 @@ export const customers: Customer[] = [
     name: "Cliente Teste",
     phone: undefined,
   },
+  {
+    id: 10,
+    name: "Cliente Exemplo",
+    phone: "(84) 99111-0000",
+  },
+  {
+    id: 11,
+    name: "Carlos Alberto",
+    phone: "(84) 99000-1234",
+  },
+  {
+    id: 12,
+    name: "Fernanda Lima",
+  },
+  {
+    id: 13,
+    name: "Lucas Pereira",
+    phone: "(84) 99777-8888",
+  },
+  {
+    id: 14,
+    name: "Juliana Costa",
+    phone: "(84) 99666-7777",
+  },
+  {
+    id: 15,
+    name: "Roberto Carlos",
+  },
+  {
+    id: 16,
+    name: "Sofia Martins",
+    phone: "(84) 99444-5555",
+  },
 ];
