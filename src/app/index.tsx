@@ -1,16 +1,5 @@
-import { useRouter } from "expo-router";
-import { useEffect } from "react";
+import { Redirect } from "expo-router";
 
 export default function Index() {
-  const router = useRouter();
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      router.replace("/drawer/home");
-    }, 0);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
-  return null;
+  return <Redirect href="/(drawer)/home" />;
 }

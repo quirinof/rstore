@@ -3,6 +3,7 @@ import {
   View,
   Text,
   StyleSheet,
+  Button,
   Alert,
   TouchableOpacity,
   ScrollView,
@@ -125,7 +126,6 @@ const styles = StyleSheet.create({
     marginTop: 32,
   },
   name: {
-    alignItems: "center",
     fontSize: 24,
     fontWeight: "700",
     color: "#333",

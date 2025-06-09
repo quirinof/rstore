@@ -34,27 +34,27 @@ export default function HomeScreen() {
         <Text style={styles.sectionTitle}>Acessos rápidos</Text>
         <Button
           title="Clientes"
-          onPress={() => router.push("/drawer/customers")}
+          onPress={() => router.push("/(drawer)/customers")}
           buttonStyle={styles.button}
         />
         <Button
           title="Fornecedores"
-          onPress={() => router.push("/drawer/suppliers")}
+          onPress={() => router.push("/(drawer)/suppliers")}
           buttonStyle={styles.button}
         />
         <Button
           title="Produtos"
-          onPress={() => router.push("/drawer/products")}
+          onPress={() => alert("/(drawer)/products")}
           buttonStyle={styles.button}
         />
         <Button
           title="Vendas"
-          onPress={() => router.push("/drawer/sales")}
+          onPress={() => alert("/(drawer)/sales")}
           buttonStyle={styles.button}
         />
         <Button
           title="Promissórias"
-          onPress={() => router.push("/drawer/promissories")}
+          onPress={() => alert("/(drawer)/promissories")}
           buttonStyle={styles.button}
         />
       </View>

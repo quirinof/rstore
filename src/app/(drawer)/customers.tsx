@@ -48,11 +48,6 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: "#fff",
   },
-  title: {
-    fontSize: 22,
-    fontWeight: "700",
-    marginBottom: 16,
-  },
   addButton: {
     backgroundColor: "#2e86de",
     marginBottom: 16,
