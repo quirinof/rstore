@@ -12,10 +12,10 @@ export default function CustomersStackLayout() {
         name="[id]"
         options={{
           title: "Detalhes do Cliente",
+          headerTitleAlign: "center",
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => router.push("/(drawer)/customers")}
-              style={{ paddingHorizontal: 8 }}
             >
               <Ionicons name="arrow-back" size={24} color="black" />
             </TouchableOpacity>

@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  Button,
   Alert,
   TouchableOpacity,
   ScrollView,
@@ -22,7 +21,7 @@ export default function CustomerDetailPage() {
 
   if (!customer) {
     return (
-      <View style={styles.container}>
+      <View>
         <Text style={styles.notFound}>Cliente não encontrado.</Text>
       </View>
     );
@@ -56,10 +55,53 @@ export default function CustomerDetailPage() {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.name}>{customer.name}</Text>
-      <Text style={styles.phone}>Telefone: {customer.phone}</Text>
+    <View style={styles.page}>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <Text style={styles.name}>{customer.name}</Text>
+        <Text style={styles.phone}>Telefone: {customer.phone}</Text>
 
+        {/* Vendas */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Vendas</Text>
+          {customerSales.length === 0 ? (
+            <Text style={styles.emptyText}>Nenhuma venda registrada.</Text>
+          ) : (
+            customerSales.map((sale) => (
+              <View style={styles.item} key={sale.id}>
+                <Ionicons name="cart-outline" size={20} color="#444" />
+                <Text style={styles.itemText}>
+                  Venda #{String(sale.id).padStart(3, "0")} - R${" "}
+                  {sale.totalValue.toFixed(2)} -{" "}
+                  {sale.saleDate.toLocaleDateString("pt-BR")}
+                </Text>
+              </View>
+            ))
+          )}
+        </View>
+
+        {/* Promissórias */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Promissórias</Text>
+          {customerPromissories.length === 0 ? (
+            <Text style={styles.emptyText}>
+              Nenhuma promissória registrada.
+            </Text>
+          ) : (
+            customerPromissories.map((p) => (
+              <View style={styles.item} key={p.id}>
+                <Ionicons name="document-text-outline" size={20} color="#444" />
+                <Text style={styles.itemText}>
+                  Promissória #{String(p.id).padStart(3, "0")} - R${" "}
+                  {p.totalAmount.toFixed(2)} - Emitida em:{" "}
+                  {p.issueDate.toLocaleDateString("pt-BR")}
+                </Text>
+              </View>
+            ))
+          )}
+        </View>
+      </ScrollView>
+
+      {/* Ações fixadas no final */}
       <View style={styles.actions}>
         <TouchableOpacity style={styles.iconButton} onPress={handleEdit}>
           <Ionicons name="create-outline" size={28} color="#2e86de" />
@@ -71,53 +113,20 @@ export default function CustomerDetailPage() {
           <Text style={styles.iconText}>Excluir</Text>
         </TouchableOpacity>
       </View>
-
-      {/* Vendas */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Vendas</Text>
-        {customerSales.length === 0 ? (
-          <Text style={styles.emptyText}>Nenhuma venda registrada.</Text>
-        ) : (
-          customerSales.map((sale) => (
-            <View style={styles.item} key={sale.id}>
-              <Ionicons name="cart-outline" size={20} color="#444" />
-              <Text style={styles.itemText}>
-                Venda #{String(sale.id).padStart(3, "0")} - R${" "}
-                {sale.totalValue.toFixed(2)} -{" "}
-                {sale.saleDate.toLocaleDateString("pt-BR")}
-              </Text>
-            </View>
-          ))
-        )}
-      </View>
-
-      {/* Promissórias */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Promissórias</Text>
-        {customerPromissories.length === 0 ? (
-          <Text style={styles.emptyText}>Nenhuma promissória registrada.</Text>
-        ) : (
-          customerPromissories.map((p) => (
-            <View style={styles.item} key={p.id}>
-              <Ionicons name="document-text-outline" size={20} color="#444" />
-              <Text style={styles.itemText}>
-                Promissória #{String(p.id).padStart(3, "0")} - R${" "}
-                {p.totalAmount.toFixed(2)} - Emitida em:{" "}
-                {p.issueDate.toLocaleDateString("pt-BR")}
-              </Text>
-            </View>
-          ))
-        )}
-      </View>
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  page: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  scrollContainer: {
     padding: 24,
     paddingTop: 64,
-    backgroundColor: "#fff",
+    paddingBottom: 24,
+    flexGrow: 1,
   },
   notFound: {
     fontSize: 18,
@@ -139,7 +148,10 @@ const styles = StyleSheet.create({
   actions: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginBottom: 32,
+    paddingVertical: 16,
+    borderTopWidth: 1,
+    borderColor: "#eee",
+    backgroundColor: "#fafafa",
   },
   iconButton: {
     alignItems: "center",
