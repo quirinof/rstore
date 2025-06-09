@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useRouter } from "expo-router";
 import {
   View,
   Text,
+  TextInput,
   FlatList,
   TouchableOpacity,
   StyleSheet,
@@ -10,7 +12,12 @@ import { Button } from "@/components/ui/Button";
 import { customers } from "@/data/customers";
 
 export default function CustomersPage() {
+  const [filter, setFilter] = useState("");
   const router = useRouter();
+
+  const filteredCustomers = customers.filter((customer) =>
+    customer.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   const handleSelectCustomer = (id: number) => {
     router.push(`/customers/${id}`);
@@ -18,14 +25,15 @@ export default function CustomersPage() {
 
   return (
     <View style={styles.container}>
-      <Button
-        title="+ Adicionar Cliente"
-        onPress={() => alert("tela de adicionar cliente em construção...")}
-        buttonStyle={styles.addButton}
+      <TextInput
+        placeholder="Pesquisar"
+        value={filter}
+        onChangeText={setFilter}
+        style={styles.input}
       />
 
       <FlatList
-        data={customers}
+        data={filteredCustomers}
         keyExtractor={(item) => String(item.id)}
         contentContainerStyle={styles.list}
         renderItem={({ item }) => (
@@ -34,9 +42,14 @@ export default function CustomersPage() {
             onPress={() => handleSelectCustomer(item.id)}
           >
             <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.phone}>{item.phone}</Text>
           </TouchableOpacity>
         )}
+      />
+
+      <Button
+        title="+ Adicionar Cliente"
+        onPress={() => alert("tela de adicionar cliente em construção...")}
+        buttonStyle={styles.addButton}
       />
     </View>
   );
@@ -54,6 +67,13 @@ const styles = StyleSheet.create({
   },
   list: {
     gap: 12,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    padding: 10,
+    marginBottom: 16,
   },
   card: {
     padding: 16,
