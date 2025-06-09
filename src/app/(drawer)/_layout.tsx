@@ -31,6 +31,15 @@ export default function DrawerLayout() {
           ),
         }}
       />
+      <Drawer.Screen
+        name="products"
+        options={{
+          title: "Produtos",
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="cube-outline" size={size} color={color} />
+          ),
+        }}
+      />
     </Drawer>
   );
 }

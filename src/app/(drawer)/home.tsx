@@ -44,7 +44,7 @@ export default function HomeScreen() {
         />
         <Button
           title="Produtos"
-          onPress={() => alert("/(drawer)/products")}
+          onPress={() => router.push("/(drawer)/products")}
           buttonStyle={styles.button}
         />
         <Button
