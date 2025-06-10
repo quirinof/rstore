@@ -1,4 +1,4 @@
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, Stack } from "expo-router";
 import { View, Text } from "react-native";
 import { products } from "@/data/products";
 
@@ -11,6 +11,7 @@ export default function ProductDetailScreen() {
 
   return (
     <View style={{ flex: 1, padding: 16 }}>
+      <Stack.Screen options={{ headerTitle: "Detalhes" }} />
       <Text style={{ fontSize: 24, fontWeight: "bold" }}>{product.name}</Text>
       <Text style={{ marginTop: 8 }}>Categoria: {product.category}</Text>
       <Text>Marca: {product.brand}</Text>

@@ -34,27 +34,27 @@ export default function HomeScreen() {
         <Text style={styles.sectionTitle}>Acessos rápidos</Text>
         <Button
           title="Clientes"
-          onPress={() => router.push("/(drawer)/customers")}
+          onPress={() => router.push("/(tabs)/customers")}
           buttonStyle={styles.button}
         />
         <Button
           title="Fornecedores"
-          onPress={() => router.push("/(drawer)/suppliers")}
+          onPress={() => router.push("/(tabs)/suppliers")}
           buttonStyle={styles.button}
         />
         <Button
           title="Produtos"
-          onPress={() => router.push("/(drawer)/products")}
+          onPress={() => router.push("/(tabs)/products")}
           buttonStyle={styles.button}
         />
         <Button
           title="Vendas"
-          onPress={() => alert("/(drawer)/sales")}
+          onPress={() => router.push("/(tabs)/sales")}
           buttonStyle={styles.button}
         />
         <Button
           title="Promissórias"
-          onPress={() => alert("/(drawer)/promissories")}
+          onPress={() => alert("/(tabs)/promissories")}
           buttonStyle={styles.button}
         />
       </View>
@@ -64,7 +64,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 24,
+    padding: 16,
     paddingBottom: 40,
     backgroundColor: "#fff",
   },

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useRouter } from "expo-router";
+import { useRouter, Stack } from "expo-router";
 import {
   View,
   Text,
@@ -25,6 +25,7 @@ export default function CustomersPage() {
 
   return (
     <View style={styles.container}>
+      <Stack.Screen options={{ headerShown: false }} />
       <TextInput
         placeholder="Pesquisar"
         value={filter}
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 8,
-    padding: 10,
+    padding: 12,
     marginBottom: 16,
   },
   card: {

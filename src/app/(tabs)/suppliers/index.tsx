@@ -1,4 +1,4 @@
-import { useRouter } from "expo-router";
+import { useRouter, Stack } from "expo-router";
 import {
   View,
   Text,
@@ -13,11 +13,12 @@ export default function SuppliersPage() {
   const router = useRouter();
 
   // const handleSelectSupplier = (id: number) => {
-  //   router.push(`/(drawer)/suppliers/${id}`);
+  //   router.push(`/(tabs)/suppliers/${id}`);
   // };
 
   return (
     <View style={styles.container}>
+      <Stack.Screen options={{ headerShown: false }} />
       <Button
         title="+ Adicionar Fornecedor"
         onPress={() => alert("tela de adicionar fornecedor em construção...")}

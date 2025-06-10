@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Stack } from "expo-router";
 import {
   View,
   Text,
@@ -25,6 +26,7 @@ export default function ProductsScreen() {
 
   return (
     <View style={styles.container}>
+      <Stack.Screen options={{ headerShown: false }} />
       <TextInput
         placeholder="Pesquisar"
         value={filter}

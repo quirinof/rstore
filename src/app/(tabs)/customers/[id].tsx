@@ -1,4 +1,4 @@
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter, Stack } from "expo-router";
 import {
   View,
   Text,
@@ -56,6 +56,7 @@ export default function CustomerDetailPage() {
 
   return (
     <View style={styles.page}>
+      <Stack.Screen options={{ headerTitle: "Detalhes" }} />
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <Text style={styles.name}>{customer.name}</Text>
         <Text style={styles.phone}>Telefone: {customer.phone}</Text>
