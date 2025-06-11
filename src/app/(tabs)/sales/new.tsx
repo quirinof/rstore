@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Stack } from "expo-router";
 import {
   View,
   Text,
@@ -31,6 +32,8 @@ export default function NewSaleScreen() {
       behavior={Platform.OS === "ios" ? "padding" : undefined}
       style={{ flex: 1 }}
     >
+      <Stack.Screen options={{ headerTitle: "Nova venda" }} />
+
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.label}>Cliente</Text>
         <TextInput

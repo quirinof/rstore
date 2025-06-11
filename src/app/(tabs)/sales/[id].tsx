@@ -42,7 +42,7 @@ export default function SaleDetailScreen() {
 
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{ headerTitle: "Detalhes" }} />
+      <Stack.Screen options={{ headerTitle: "Detalhes da venda" }} />
 
       <Text style={styles.label}>Cliente:</Text>
       <Text style={styles.value}>

@@ -54,7 +54,7 @@ export default function HomeScreen() {
         />
         <Button
           title="Promissórias"
-          onPress={() => alert("/(tabs)/promissories")}
+          onPress={() => router.push("/(tabs)/promissories")}
           buttonStyle={styles.button}
         />
       </View>

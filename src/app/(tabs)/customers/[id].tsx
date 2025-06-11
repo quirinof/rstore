@@ -56,7 +56,7 @@ export default function CustomerDetailPage() {
 
   return (
     <View style={styles.page}>
-      <Stack.Screen options={{ headerTitle: "Detalhes" }} />
+      <Stack.Screen options={{ headerTitle: "Detalhes do cliente" }} />
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <Text style={styles.name}>{customer.name}</Text>
         <Text style={styles.phone}>Telefone: {customer.phone}</Text>
@@ -156,11 +156,14 @@ const styles = StyleSheet.create({
   },
   iconButton: {
     alignItems: "center",
+    flex: 1,
   },
   iconText: {
     marginTop: 4,
     fontSize: 14,
     color: "#333",
+    textAlign: "center",
+    minWidth: 60,
   },
   section: {
     marginBottom: 24,
@@ -180,6 +183,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     fontSize: 14,
     color: "#444",
+    flex: 1,
   },
   emptyText: {
     fontSize: 14,

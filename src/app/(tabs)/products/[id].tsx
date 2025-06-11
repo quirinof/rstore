@@ -11,7 +11,7 @@ export default function ProductDetailScreen() {
 
   return (
     <View style={{ flex: 1, padding: 16 }}>
-      <Stack.Screen options={{ headerTitle: "Detalhes" }} />
+      <Stack.Screen options={{ headerTitle: "Detalhes do produto" }} />
       <Text style={{ fontSize: 24, fontWeight: "bold" }}>{product.name}</Text>
       <Text style={{ marginTop: 8 }}>Categoria: {product.category}</Text>
       <Text>Marca: {product.brand}</Text>
