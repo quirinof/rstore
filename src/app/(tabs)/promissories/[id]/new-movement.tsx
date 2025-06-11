@@ -29,8 +29,6 @@ export default function NewMovementScreen() {
       return;
     }
 
-    // Aqui você pode integrar com seu backend ou atualizar mocks
-
     Alert.alert("Sucesso", "Movimentação registrada com sucesso!");
     router.back();
   };

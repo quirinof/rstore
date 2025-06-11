@@ -23,7 +23,7 @@ export default function SaleDetailScreen() {
   const customer = customers.find((c) => c.id === sale.customerId);
 
   const handleEdit = () => {
-    router.push(`/sales/edit/${sale.id}`); // Supondo que você criará essa rota
+    router.push(`/sales/edit/${sale.id}`);
   };
 
   const handleDelete = () => {
