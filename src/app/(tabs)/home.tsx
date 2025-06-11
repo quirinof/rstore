@@ -1,62 +1,43 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
-import { Button } from "@/components/ui/Button";
-import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
-  const router = useRouter();
-
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.welcome}>Bem vindo ao RstoreApp!</Text>
-      <Text style={styles.title}>Painel da Loja</Text>
+      <Text style={styles.welcome}>Bem-vinda de volta 👋</Text>
+      <Text style={styles.title}>Visão Geral da Loja</Text>
 
       <View style={styles.summaryContainer}>
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>Vendas do mês</Text>
+          <Text style={styles.cardTitle}>Vendas no mês</Text>
           <Text style={styles.cardValue}>R$ 7.777,77</Text>
         </View>
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>Produtos</Text>
+          <Text style={styles.cardTitle}>Produtos em estoque</Text>
           <Text style={styles.cardValue}>227</Text>
         </View>
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>Receber</Text>
+          <Text style={styles.cardTitle}>A receber</Text>
           <Text style={styles.cardValue}>R$ 9.999,99</Text>
         </View>
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>Pagar</Text>
+          <Text style={styles.cardTitle}>A pagar</Text>
           <Text style={styles.cardValue}>R$ 99,99</Text>
         </View>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Acessos rápidos</Text>
-        <Button
-          title="Clientes"
-          onPress={() => router.push("/(tabs)/customers")}
-          buttonStyle={styles.button}
-        />
-        <Button
-          title="Fornecedores"
-          onPress={() => router.push("/(tabs)/suppliers")}
-          buttonStyle={styles.button}
-        />
-        <Button
-          title="Produtos"
-          onPress={() => router.push("/(tabs)/products")}
-          buttonStyle={styles.button}
-        />
-        <Button
-          title="Vendas"
-          onPress={() => router.push("/(tabs)/sales")}
-          buttonStyle={styles.button}
-        />
-        <Button
-          title="Promissórias"
-          onPress={() => router.push("/(tabs)/promissories")}
-          buttonStyle={styles.button}
-        />
+      <Text style={styles.sectionTitle}>Últimas movimentações</Text>
+      <View style={styles.movementItem}>
+        <Text style={styles.movementText}>Pagamento - R$ 100,00</Text>
+        <Text style={styles.movementNote}>Promissória #2</Text>
+      </View>
+      <View style={styles.movementItem}>
+        <Text style={styles.movementText}>Cobrança enviada</Text>
+        <Text style={styles.movementNote}>Promissória #4</Text>
+      </View>
+      <View style={styles.movementItem}>
+        <Text style={styles.movementText}>Venda #203 concluída</Text>
+        <Text style={styles.movementNote}>Cliente: Ana Paula</Text>
       </View>
     </ScrollView>
   );
@@ -102,15 +83,23 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#000",
   },
-  section: {
-    marginTop: 16,
-  },
   sectionTitle: {
     fontSize: 18,
     fontWeight: "600",
     marginBottom: 12,
   },
-  button: {
-    marginBottom: 12,
+  movementItem: {
+    backgroundColor: "#f9f9f9",
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 10,
+  },
+  movementText: {
+    fontSize: 14,
+    fontWeight: "600",
+  },
+  movementNote: {
+    fontSize: 12,
+    color: "#666",
   },
 });
