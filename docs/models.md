@@ -29,7 +29,6 @@ class Product {
   string name
   int stock_quantity
   decimal current_price
-  string unit_of_measure
   enum category
   string brand
 }
